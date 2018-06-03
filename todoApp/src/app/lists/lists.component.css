@@ -1,0 +1,19 @@
+button {
+   width: 100px;
+   height: 35px;
+   margin: 5px;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px
+    
+}
+
+
+.list-container > .list {
+    width: 200px;
+    flex: 2
+}

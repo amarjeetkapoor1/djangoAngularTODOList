@@ -1,0 +1,24 @@
+<div class="row list" >
+  <div class="bg-primary header">
+    <div *ngIf="edit===false">
+      <div class = "header-name">
+        {{name}}
+      </div>
+      <div class = "header-icons">
+        <a (click)="edit=true"class="material-icons">edit</a>
+        <a (click)="onDelete()" class="material-icons">delete</a>
+      </div>
+    </div>
+    <div *ngIf="edit===true">
+      <input type="text" class = "header-name" [(ngModel)]="name">
+      <div class = "header-icons">
+        <a (click)="onEdit()"class="material-icons">save</a>
+        <a (click)="edit=false" class="material-icons">cancel</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p>
+    List of Tasks will come here
+  </p>
+</div>

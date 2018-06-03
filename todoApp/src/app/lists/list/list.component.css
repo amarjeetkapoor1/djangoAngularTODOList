@@ -1,0 +1,27 @@
+.list {
+    border: black solid 1px;
+    margin: 5px; 
+    border-radius: 5px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.header {
+    width: 100%; 
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.header-name {
+    width: 75%;
+    float: left;
+    word-break: break-all
+}
+
+.header-icons {
+    float:right;
+    width: 25%
+}

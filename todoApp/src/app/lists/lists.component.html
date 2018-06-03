@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngIf="add===false; else addCase" style="float: right">
+    <div class="row">
+      <button class="btn btn-primary" (click)="onRefresh()">
+        <i class="material-icons">refresh</i>
+      </button>
+      <button class="btn" (click)="add=true">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+  </div>
+  <ng-template #addCase>
+    <div style="float: right" >
+      <form class="form-inline" #form="ngForm" (ngSubmit)="onAdd()">
+        <label for="listName">Name of new List: </label>
+        <input type=text name = "listName" class="form-control" id="listName" [(ngModel)]="newList" required>
+        <button class="btn" (click)="add=false">Cancel</button>
+        <button class="btn btn-success" [disabled]="!form.form.valid" type="submit">Save</button>
+      </form>
+    </div>
+  </ng-template>
+  <div class="row">
+    <header>
+      <h2> List of Tasks</h2>
+    </header>
+  </div>
+</div>
+<div class="list-container">
+  <app-list class="list border" *ngFor="let i of getKeys()" [id]="i" [name]="lists.get(i)">
+    </app-list>
+</div>
+
