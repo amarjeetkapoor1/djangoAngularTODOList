@@ -26,7 +26,7 @@
   </div>
 </div>
 <div class="list-container">
-  <app-list class="list border" *ngFor="let i of getKeys()" [id]="i" [name]="lists.get(i)">
+  <app-list class="list" *ngFor="let listId of getKeys()" [id]="listId" [name]="lists.get(listId)">
     </app-list>
 </div>
 

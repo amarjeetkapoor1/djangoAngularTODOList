@@ -8,12 +8,12 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    padding: 10px
-    
+    padding: 10px;
+    overflow: scroll;
 }
 
-
 .list-container > .list {
-    width: 200px;
-    flex: 2
+    flex-basis: auto;
+    min-width: 300px;
+    flex-grow: 1;
 }

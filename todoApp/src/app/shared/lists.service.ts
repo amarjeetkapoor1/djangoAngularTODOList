@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { TasksService } from 'src/app/shared/tasks.service';
 
 @Injectable()
 export class ListsService {
@@ -8,7 +9,7 @@ export class ListsService {
     lists: Map<number, string>;
     get = new Subject<Map<number, string>>();
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private tasksService: TasksService) {
         this.lists = new Map();
         this.update();
     }
@@ -22,6 +23,7 @@ export class ListsService {
                         this.lists.set(item.id, item.name);
                     }
                 );
+                this.tasksService.update();
                 this.get.next(new Map(this.lists));
             }
         );

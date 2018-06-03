@@ -1,0 +1,15 @@
+<div class="row task" >
+    <div class="header" [ngStyle]="getColor()">
+        <div class = "header-name">
+            {{task.title}}
+        </div>
+        <div class = "priority">
+            {{task.priority}}
+        </div>
+    </div>
+    <hr>
+    <div style = "padding: 2px">
+        {{task.description}}
+    </div>
+</div>
+  

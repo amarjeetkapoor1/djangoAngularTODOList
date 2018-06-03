@@ -18,7 +18,8 @@
     </div>
   </div>
   <hr>
-  <p>
-    List of Tasks will come here
-  </p>
+  <div class="task-container">
+    <app-task class="task border" *ngFor="let task of tasks" [task] = "task" >
+    </app-task>
+  </div>
 </div>

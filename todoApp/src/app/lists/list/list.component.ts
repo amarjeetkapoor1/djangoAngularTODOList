@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ListsService, List } from 'src/app/shared/lists.service';
+import { TasksService, Task } from '../../shared/tasks.service';
 
 @Component({
   selector: 'app-list',
@@ -8,13 +9,28 @@ import { ListsService, List } from 'src/app/shared/lists.service';
 })
 export class ListComponent implements OnInit {
 
-  @Input() id: number;
+  _id; string;
+  tasks: Array<Task>;
+
+  get id(): number {
+    return this._id;
+  }
+  @Input() set id(val: number) {
+    this._id = val;
+    this.tasks = this.tasksService.getTask(this._id);
+    console.log(this.tasks);
+  }
+
   @Input() name: string;
   edit = false;
 
-  constructor(private listsService: ListsService) { }
+  constructor(private listsService: ListsService,
+    private tasksService: TasksService) {
+      this.tasks = new Array<Task>();
+    }
 
   ngOnInit() {
+
   }
 
   onDelete() {

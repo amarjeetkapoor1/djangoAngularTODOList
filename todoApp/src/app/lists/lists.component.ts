@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListsService, List } from 'src/app/shared/lists.service';
+import { TasksService } from 'src/app/shared/tasks.service';
 
 @Component({
   selector: 'app-lists',
@@ -17,7 +18,6 @@ export class ListsComponent implements OnInit {
     this.listsService.get.subscribe(
       item => {
         this.lists = item;
-        console.log(this.lists);
       }
     );
   }
