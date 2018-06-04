@@ -14,7 +14,7 @@ export class ListsComponent implements OnInit {
   newList: string;
 
   constructor(private listsService: ListsService) {
-    this.lists = this.listsService.getLists();
+    this.lists = new Map<number, string>();
     this.listsService.get.subscribe(
       item => {
         this.lists = item;

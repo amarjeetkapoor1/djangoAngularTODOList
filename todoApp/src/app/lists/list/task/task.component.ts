@@ -38,5 +38,4 @@ export class TaskComponent implements OnInit {
         return {'background-color': '#cc0000'};
     }
   }
-
 }

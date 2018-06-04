@@ -17,8 +17,11 @@ export class ListComponent implements OnInit {
   }
   @Input() set id(val: number) {
     this._id = val;
-    this.tasks = this.tasksService.getTask(this._id);
-    console.log(this.tasks);
+    this.tasksService.getTask(this._id).subscribe(
+      tasks => {
+        this.tasks = tasks;
+      }
+    );
   }
 
   @Input() name: string;
@@ -38,7 +41,7 @@ export class ListComponent implements OnInit {
   }
 
   onEdit() {
-    this.listsService.edit(new List(this.id, this.name));
+    this.listsService.edit(new List(this.name, this.id));
     this.edit = false;
   }
 }
